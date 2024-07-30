@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="resultHeader">Data from extension:</h1>
+    <input type="button" value="Get data from extension" id="theButton" />
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.source !== window) {
+          return;
+        }
+
+        if (event.data.type === "FROM_EXTENSION") {
+          window.resultHeader.textContent =
+            "Data from extension: " + JSON.stringify(event.data.message);
+        }
+      });
+
+      document.getElementById("theButton").addEventListener(
+        "click",
+        () => {
+          window.resultHeader.textContent = "Data from extension: ";
+          const message = { type: "FROM_PAGE", command: "test" };
+          console.log("Sending data into extension:", message);
+          window.postMessage(message, "*");
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

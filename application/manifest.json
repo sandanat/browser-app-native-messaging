@@ -1,0 +1,9 @@
+{
+  "name": "native.messaging",
+  "description": "Native messaging",
+  "path": "C:\\Users\\user\\page-ext-messaging\\application\\app.ps1",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://blmajfldadakhipiaebfpipnjlkhpejl/"
+  ]
+}

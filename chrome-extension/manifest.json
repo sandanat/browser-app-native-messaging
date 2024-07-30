@@ -1,0 +1,23 @@
+{
+  "description": "Chrome native messaging extension",
+  "manifest_version": 3,
+  "name": "Chrome native messaging extension",
+  "version": "1.0",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "nativeMessaging"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
