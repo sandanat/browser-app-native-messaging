@@ -1,6 +1,7 @@
 # Installation
 
 1. Install _chrome-extension_ directory into Chrome's extensions.
+1. Copy extension ID in chrome and insert it into _chrome-extension/content.js_ (const **extensionId**) and _application/manifest.json_ (property **allowed_origins**).
 1. Specify full path to _application/app.ps1_ in _application/manifest.json_ **path** property.
 1. Add native messaging channel with name **native.messaging** in windows registry. Specify default value with full path to _application/manifest.json_. For example
 
